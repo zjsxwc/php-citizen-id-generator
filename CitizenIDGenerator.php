@@ -102,6 +102,9 @@ class CitizenIDGenerator
 
         $isMale = readline("是男的吗(yes)>");
         $isMale = trim($isMale);
+        if (strlen($isMale) == 0) {
+            $isMale = 'yes';
+        }
         $isMale = ($isMale == 'yes')?true:false;
 
         $instance = new static();
