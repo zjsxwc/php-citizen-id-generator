@@ -90,10 +90,10 @@ class CitizenIDGenerator
 
 
         enterbirthday:
-        $birthDay = readline("请8位的出生年月日 （默认19901201）>");
+        $birthDay = readline("请8位的出生年月日 （默认19900801）>");
         $birthDay = trim($birthDay);
         if (strlen($birthDay) == 0) {
-            $birthDay = '19901201';
+            $birthDay = '19900801';
         }
         if ((strlen($birthDay)!=8)||(!is_numeric($birthDay))) {
             echo "出生年月日不符合要求 {$birthDay} ".PHP_EOL;
