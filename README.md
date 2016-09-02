@@ -2,7 +2,6 @@
 
 使用方式，参考代码中cli方式执行：
 
-｀｀｀
+```
 CitizenIDGenerator::cliExec();
-｀｀｀
-
+```
