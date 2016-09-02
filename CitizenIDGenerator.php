@@ -76,7 +76,8 @@ class CitizenIDGenerator
         }
 
         entercityname:
-        $cityName = readline("请输入城市名字");
+        $cityName = readline("请输入城市名字>");
+        $cityName = trim($cityName);
         $cityCodes = require_once __DIR__."/CityCode.php";
         if (!array_key_exists($cityName,$cityCodes)) {
             echo "不存在城市 {$cityName} 的6位城市码，城市名称可以参见CityCode.php".PHP_EOL;
@@ -86,13 +87,15 @@ class CitizenIDGenerator
 
 
         enterbirthday:
-        $birthDay = readline("请8位的出生年月日");
-        if ((strlen($birthDay)!=8)&&(!is_numeric($birthDay))) {
+        $birthDay = readline("请8位的出生年月日>");
+        $birthDay = trim($birthDay);
+        if ((strlen($birthDay)!=8)||(!is_numeric($birthDay))) {
             echo "出生年月日不符合要求 {$birthDay} ".PHP_EOL;
             goto enterbirthday;
         }
 
-        $isMale = readline("是男的吗(yes)");
+        $isMale = readline("是男的吗(yes)>");
+        $isMale = trim($isMale);
         $isMale = ($isMale == 'yes')?true:false;
 
         $instance = new static();
